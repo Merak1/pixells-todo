@@ -5,8 +5,6 @@ import ToDo from "./components/ToDo";
 import { DarkModeToggle } from "./components/accesibility/DarkModeToggle";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="dark:bg-slate-800">
       <div className="text-center pt-8 dark:text-white">

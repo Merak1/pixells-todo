@@ -6,11 +6,11 @@ import { DarkModeToggle } from "./components/accesibility/DarkModeToggle";
 
 function App() {
   return (
-    <div className="dark:bg-slate-800">
+    <div className="dark:bg-slate-800 h-[100vh]">
       <div className="text-center pt-8 dark:text-white">
         <div className="flex">
           <h1 className="bold font-gochi text-3xl w-full">To do list</h1>
-          <span className="text-sm text-wrap">
+          <span className="absolute right w-4">
             <DarkModeToggle />
           </span>
         </div>

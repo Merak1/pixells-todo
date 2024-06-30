@@ -1,5 +1,11 @@
+import ToDos from "./ToDos";
+
 const Home = () => {
-  return <div>This is home</div>;
+  return (
+    <div>
+      <ToDos />
+    </div>
+  );
 };
 
 export default Home;

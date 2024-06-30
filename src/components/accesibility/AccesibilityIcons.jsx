@@ -1,6 +1,6 @@
 let iconStyles = {
   color: "#fff",
-  fontSize: "1.2em",
+  fontSize: "1em",
   position: "absolute",
   top: "4px",
   left: "-3px",

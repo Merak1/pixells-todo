@@ -5,7 +5,6 @@ import Task from "./task/Task";
 import { useNavigate } from "react-router-dom";
 import { useTasks } from "../hooks/useTasks";
 
-let nextId = 0;
 const ToDos = () => {
   const {
     removeTask,
@@ -18,13 +17,11 @@ const ToDos = () => {
     createNewTaskValue: value,
     currentPage,
     paginatedTasks,
-    totalPages,
     setCreateNewTaskValue,
   } = useTasks();
   const navigate = useNavigate();
 
   const handleClick = (element) => {
-    console.log("handle click => ", element);
     navigate(`/todo/${element}`);
   };
 
@@ -37,25 +34,9 @@ const ToDos = () => {
 
   useEffect(() => {
     if (tasks) {
-      console.log("task  becouse currentPage is changing");
-      console.log("currentPage ", currentPage);
       PaginateResults(tasks);
     }
   }, [currentPage]);
-
-  //   const handleEditSubmit = (e) => {
-  //     e.preventDefault();
-  //     console.log("createNewTaskValue : ", createNewTaskValue);
-  //     if (createNewTaskValue !== "") {
-  //       setTasks([
-  //         ...tasks,
-  //         { id: nextId++, createNewTaskValue: createNewTaskValue },
-  //       ]);
-  //     }
-
-  //     if (!createNewTaskValue) return;
-  //     setValue("");
-  //   };
 
   return (
     <div>

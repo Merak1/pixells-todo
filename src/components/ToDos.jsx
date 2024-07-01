@@ -26,7 +26,7 @@ const ToDos = () => {
 
   const handleClick = (element) => {
     console.log("handle click => ", element);
-    navigate(`/${element}`);
+    navigate(`/todo/${element}`);
   };
   const removeTask = useCallback((taskName) => {
     setTasks((prev) => {

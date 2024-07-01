@@ -6,7 +6,7 @@ const ToDo = () => {
   return (
     <div>
       <p>this is to do</p>
-      {/* <p>Id = {id}</p> */}
+      <p>Id = {id}</p>
     </div>
   );
 };

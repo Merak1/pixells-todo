@@ -12,7 +12,7 @@ const ToDos = () => {
 
   const [entries, setEntries] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const [paginatedEntries, setpaginatedEntries] = useState();
+  const [paginatedTasks, setPaginatedTasks] = useState();
 
   const [totalPages, setTotalPages] = useState(1);
 
@@ -83,7 +83,7 @@ const ToDos = () => {
   const PaginateResults = (entriesToDisplay) => {
     if (entriesToDisplay) {
       const result = Paginate(entriesToDisplay, currentPage, pageSize);
-      setpaginatedEntries(result);
+      setPaginatedTasks(result);
     }
   };
   const pages = Array.from({ length: totalPages }, (value, index) => index + 1);
@@ -105,8 +105,8 @@ const ToDos = () => {
       </div>
 
       <div className=" flex flex-col m-auto w-1/2 min-h-[67vh] ">
-        {paginatedEntries &&
-          paginatedEntries.map((element) => {
+        {paginatedTasks &&
+          paginatedTasks.map((element) => {
             return (
               <div key={element.id + element.value}>
                 <Task

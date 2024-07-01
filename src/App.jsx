@@ -9,6 +9,7 @@ import {
 import Home from "./components/Home";
 import ToDo from "./components/ToDo";
 import { DarkModeToggle } from "./components/accesibility/DarkModeToggle";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   let location = useLocation();
@@ -40,6 +41,9 @@ function App() {
 
           <Route path="/todo/:id" element={<ToDo />} />
         </Routes>
+        <div className="font-sans">
+          <Toaster position="bottom-right" />
+        </div>
       </div>
     </div>
   );

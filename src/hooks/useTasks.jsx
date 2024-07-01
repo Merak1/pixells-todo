@@ -21,6 +21,10 @@ export const TaskContextProvider = (props) => {
   const pages = Array.from({ length: totalPages }, (value, index) => index + 1);
 
   useEffect(() => {
+    console.log("editTaskValue -", editTaskValue);
+  }, [editTaskValue]);
+
+  useEffect(() => {
     if (tasks.length > 0) {
       window.localStorage.setItem("TODOS_STATE", JSON.stringify(tasks));
     }
@@ -69,20 +73,6 @@ export const TaskContextProvider = (props) => {
     });
   }, []);
 
-  //   const handleSubmit = useCallback(
-  //     (e) => {
-  //       e.preventDefault();
-  //       console.log("createNewTaskValue pn handleSubmit", createNewTaskValue);
-  //       if (createNewTaskValue !== "") {
-  //         setTasks([...tasks, { id: nextId++, createNewTaskValue: createNewTaskValue }]);
-  //       }
-
-  //       if (!createNewTaskValue) return;
-  //       setCreateNewTaskValue("");
-  //     },
-  //     [createNewTaskValue]
-  //   );
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (createNewTaskValue !== "") {
@@ -94,17 +84,52 @@ export const TaskContextProvider = (props) => {
     if (!createNewTaskValue) return;
     setCreateNewTaskValue("");
   };
-  const handleSubmitEdit = (e) => {
-    e.preventDefault();
-    if (createNewTaskValue !== "") {
-      console.log("createNewTaskValue pn handleSubmit", createNewTaskValue);
 
-      setTasks([...tasks, { id: nextId++, value: createNewTaskValue }]);
-    }
+  //   const handleSubmitEdit = useCallback(
+  //     (id) => {
+  //       console.log("id 🦗: ", id);
+  //       //   setTasks((prev) => {
+  //       setTasks(
+  //         tasks.map((task) => {
+  //           console.log("task: 🙂 ", task);
+  //           //   console.log("task.value: ", task.value);
+  //           if (task.value === id) {
+  //             console.log("is the same ");
+  //             console.log("task.value : ", task.value);
+  //             console.log("id : ", id);
+  //             // console.log("new return ", { ...task.value, value: editTaskValue });
+  //             return { ...task, value: editTaskValue };
+  //           } else {
+  //             return tasks;
+  //           }
+  //         })
+  //       );
 
-    if (!createNewTaskValue) return;
-    setCreateNewTaskValue("");
-  };
+  //       // if (prev) {
+  //       //   const currentTask = prev.find((element) => element.value !== id);
+  //       //   console.log("currentTask ⚪: ", currentTask);
+
+  //       //   //   return filteredTasks;
+  //       // }
+  //       // return prev;
+  //     },
+  //     [editTaskValue]
+  //   );
+
+  //   const handleSubmitEdit = (id) => {
+  //     // e.preventDefault();
+  //     // console.log("editTaskValue 🎪---- : ", editTaskValue);
+  //     console.log("id : ", id);
+  //     // if (createNewTaskValue !== "") {
+  //     //   setTasks([
+  //     //     ...tasks,
+  //     //     { id: nextId++, createNewTaskValue: createNewTaskValue },
+  //     //   ]);
+  //     // }
+
+  //     // if (!createNewTaskValue) return;
+  //     // setValue("");
+  //   };
 
   //
   const getPages = useCallback(
@@ -146,6 +171,10 @@ export const TaskContextProvider = (props) => {
     paginatedTasks,
     totalPages,
     setCreateNewTaskValue,
+    // handleSubmitEdit,
+    editTaskValue,
+    setEditTaskValue,
+    setTasks,
   };
 
   return <TaskContext.Provider value={value} {...props} />;

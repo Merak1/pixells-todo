@@ -3,7 +3,6 @@ import Button from "./inputs/button";
 import Input from "./inputs/Input";
 import Task from "./task/Task";
 import { useNavigate } from "react-router-dom";
-import { pageSize, Paginate } from "../utils/Paginate";
 import { useTasks } from "../hooks/useTasks";
 
 let nextId = 0;
@@ -44,19 +43,19 @@ const ToDos = () => {
     }
   }, [currentPage]);
 
-  const handleEditSubmit = (e) => {
-    e.preventDefault();
-    console.log("createNewTaskValue : ", createNewTaskValue);
-    if (createNewTaskValue !== "") {
-      setTasks([
-        ...tasks,
-        { id: nextId++, createNewTaskValue: createNewTaskValue },
-      ]);
-    }
+  //   const handleEditSubmit = (e) => {
+  //     e.preventDefault();
+  //     console.log("createNewTaskValue : ", createNewTaskValue);
+  //     if (createNewTaskValue !== "") {
+  //       setTasks([
+  //         ...tasks,
+  //         { id: nextId++, createNewTaskValue: createNewTaskValue },
+  //       ]);
+  //     }
 
-    if (!createNewTaskValue) return;
-    setValue("");
-  };
+  //     if (!createNewTaskValue) return;
+  //     setValue("");
+  //   };
 
   return (
     <div>

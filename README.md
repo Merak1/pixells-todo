@@ -14,4 +14,5 @@
 <li>clone the repo</li>
 </ul><ul>
 <li>install dependencies with npm install</li>
+<li>run proyect locally with npm run dev</li>
 </ul>

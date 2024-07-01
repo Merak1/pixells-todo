@@ -1,0 +1,17 @@
+export const initialTasks = [
+  { id: 0, value: "comer frijoles" },
+  { id: 1, value: "asar queso" },
+  { id: 2, value: "cortar pollo" },
+  { id: 3, value: "limpiar huesos" },
+  { id: 4, value: "lavar coche" },
+  { id: 5, value: "cambiar foco" },
+  { id: 6, value: "compar carne" },
+  { id: 7, value: "tirar basura" },
+  { id: 8, value: "levantar ropa" },
+  { id: 9, value: "lavar tenis" },
+  { id: 10, value: "cambiar sábanas" },
+  { id: 11, value: "compar papel" },
+  { id: 12, value: "limpiar piso" },
+  { id: 13, value: "barrer piso" },
+  { id: 14, value: "cambiar colcha" },
+];

@@ -6,12 +6,13 @@ import {
   useState,
 } from "react";
 import { pageSize, Paginate } from "../utils/Paginate";
+import { initialTasks } from "../utils/Tasks";
 
 export const TaskContext = createContext(null);
 
 export const TaskContextProvider = (props) => {
   let nextId = 0;
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(initialTasks);
   const [createNewTaskValue, setCreateNewTaskValue] = useState("");
   const [editTaskValue, setEditTaskValue] = useState();
   const [currentPage, setCurrentPage] = useState(1);

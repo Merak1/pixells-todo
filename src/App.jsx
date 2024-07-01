@@ -15,8 +15,8 @@ function App() {
 
   const navigate = useNavigate();
   return (
-    <div className="dark:bg-slate-800 h-[100vh]">
-      <div className="text-center pt-8 dark:text-white ">
+    <div className="dark:bg-slate-800 h-[100vh] font-gochi">
+      <div className="text-center pt-8 dark:text-white text-slate-800 ">
         <div className="flex pb-10 border-b-2 dark:text-white">
           {location.pathname !== "/" ? (
             <div className="p-2 text-4xl">
@@ -27,11 +27,11 @@ function App() {
           )}
           <div
             onClick={() => navigate("/")}
-            className="bold font-gochi text-3xl w-full cursor-pointer flex flex-col justify-center"
+            className="bold text-3xl w-full cursor-pointer flex flex-col justify-center"
           >
             <h1 className=" m-auto my-0">To do list</h1>
           </div>
-          <span className="absolute right-[15%] w-4 top-[5%] flex  justify-center">
+          <span className="absolute font-sans right-[15%] w-4 top-[5%] flex  justify-center">
             <DarkModeToggle />
           </span>
         </div>

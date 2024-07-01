@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import "./styles/ReactToggle.css";
 import { BrowserRouter } from "react-router-dom";
+import { TaskContextProvider } from "./hooks/useTasks";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <TaskContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </TaskContextProvider>
   </React.StrictMode>
 );
